@@ -23,7 +23,21 @@ console.log(obj2);　// { foo: -9999, bar: 456, baz: 789 }と表示される
   // bar: string;
 // }
 // と表示される（型チェック）
-const obj = {
+const obj3 = {
+  foo: 123,
+  bar: 'Hello, World!'
+};
+
+// type文
+
+// オブジェクトの型は直接書くと長いため、type文で別名を書くのが定石
+
+type FooBarObj = {
+  foo: number;
+  bar: string;
+};
+
+const obj4: FooBarObj = {
   foo: 123,
   bar: 'Hello, World!'
 };
