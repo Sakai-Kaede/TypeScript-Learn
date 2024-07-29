@@ -102,3 +102,20 @@ const arr3: Array<{
 
 const arr4: readonly number[] = [1, 10, 100];
 // arr4[1] = -500 エラーになる
+
+
+// pushメソッド
+const arr5: number[] = [1, 10, 100];
+
+
+arr5.push(1000);
+console.log(arr5); // [1, 10, 100, 1000]と表示される
+
+// for-of文
+
+// すべての要素を平等に扱う
+
+// ループのたびにelmが作り直される
+for(const elm of arr5) { // arr5 = [1, 10, 100, 1000]
+  console.log(elm);
+}
