@@ -119,3 +119,36 @@ console.log(arr5); // [1, 10, 100, 1000]と表示される
 for(const elm of arr5) { // arr5 = [1, 10, 100, 1000]
   console.log(elm);
 }
+
+// 配列へのインデックスアクセスは極力行わないようにするべき
+
+
+// 分割代入
+
+const obj9 = {
+  foo1: 'foo',
+  bar1: 'bar',
+};
+
+const {foo1, bar1} = obj9;
+
+// 以下のプログラムと同様の意味となる
+// const foo1 = obj9.foo1;
+// const bar1 = obj9.bar1;
+
+const nested = {
+  num: 123,
+  obj: {
+    foo2: 'hello',
+    bar2: 'world',
+  }
+};
+
+const {num, obj: {foo2}} = nested;
+
+console.log(num); // [123]と表示される
+console.log(foo2);// ['hello']と表示される
+
+
+// 分割代入のデフォルト値
+
