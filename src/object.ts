@@ -29,7 +29,7 @@ const obj3 = {
 };
 
 
-// type文
+//// type文 ////
 
 // オブジェクトの型は直接書くと長いため、type文で別名を書くのが定石
 
@@ -44,7 +44,7 @@ const obj4: FooBarObj = {
 };
 
 
-// オプショナルなプロパティ宣言
+//// オプショナルなプロパティ宣言 ////
 
 // あってもなくてもよいプロパティを宣言
 
@@ -104,9 +104,8 @@ const arr4: readonly number[] = [1, 10, 100];
 // arr4[1] = -500 エラーになる
 
 
-// pushメソッド
+//// pushメソッド ////
 const arr5: number[] = [1, 10, 100];
-
 
 arr5.push(1000);
 console.log(arr5); // [1, 10, 100, 1000]と表示される
@@ -123,7 +122,7 @@ for(const elm of arr5) { // arr5 = [1, 10, 100, 1000]
 // 配列へのインデックスアクセスは極力行わないようにするべき
 
 
-// 分割代入
+//// 分割代入 ////
 
 const obj9 = {
   foo1: 'foo',
@@ -150,5 +149,15 @@ console.log(num); // [123]と表示される
 console.log(foo2);// ['hello']と表示される
 
 
-// 分割代入のデフォルト値
+//// 分割代入のデフォルト値 ////
 
+type Obj = {foo?: number};
+
+const obj10: Obj = {};
+const obj11: Obj = {foo: -1234};
+
+const {foo = 500} = obj10;
+console.log(foo); // [500]と表示される
+
+const {foo: bar = 500} = obj11;
+console.log(bar);
