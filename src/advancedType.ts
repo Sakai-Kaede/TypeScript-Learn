@@ -71,3 +71,26 @@ function useMaybeHuman(human3: Human5 | undefined) {
 
 // ?.はそれ以外(上の例だとundefined)のプロパティアクセス
 // ・関数呼び出し・メソッド呼び出しをまとめて飛ばす効果を持つ
+
+
+//// 型の絞り込み ////
+
+type SignType = 'plus' | 'minus';
+function signNumber(type: SignType) {
+  return type === 'plus' ? 1 : -1;
+};
+
+function numberWithSign(num: number, type: SignType | 'none') {
+  if(type === 'none') {
+    // ここではtypeは'none'型
+    return 0;
+  } else {
+    // if文で'none'型を除外できているため
+    // ここではtypeはSignType型
+    return num * signNumber(type);
+  }
+}
+
+console.log(numberWithSign(5, 'plus')); // [5]と表示される
+console.log(numberWithSign(5, 'minus')); // [-5]と表示される
+console.log(numberWithSign(5, 'none')); // [0]と表示される
